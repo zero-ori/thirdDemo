@@ -1,7 +1,5 @@
 <template>
   <div>
-     <a-button>sss</a-button> jkhakjsdhkjashdkjhajksdhasjkhd
-  
   </div>
 </template>
 

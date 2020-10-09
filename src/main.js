@@ -1,7 +1,8 @@
 /* eslint-disable */
 import Vue from "vue";
 import App from "./App.vue";
-import router from "./router";
+import {router} from "./router";
+import { install } from './components';
 import {
   Button,
   Table,
@@ -64,10 +65,10 @@ Vue.use(Popconfirm);
 Vue.use(TreeSelect);
 Vue.use(Collapse);
 console.log(Button.name, 'sadasd')
-
+install(Vue);
 Vue.config.productionTip = false;
 
 new Vue({
   router,
   render: h => h(App)
-}).$mount("#appx");
+}).$mount("#app");

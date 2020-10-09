@@ -1,7 +1,9 @@
 <template>
   <div id="app" class="main">
-    <cp></cp>
-    <a-button type="primary"><router-link to="/login">login</router-link></a-button>
+    <!-- <cp></cp> -->
+    <a-button type="primary"><router-link to="/login/list">login</router-link></a-button>
+    <a-button type="primary"><router-link to="/register/list">register</router-link></a-button>
+    <router-view></router-view>
     <!-- <div id="nav">
       <cp></cp>
       

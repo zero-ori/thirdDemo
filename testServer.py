@@ -30,11 +30,7 @@ while execute:
 # 	"errorCode": 401, 
 # 	"errorMessage":"需要端口服务请联系我～qq:2625521912"
 # }"""+'}'
-			httpdata="""
-<h1>----------------------------------需要端口服务请联系我～qq:2625521912,零-----------------------------------</h1>
-<input>send a info</input>
-<button> ok </button>
-"""
+			httpdata="""{"aa":"1"}"""
 
 
 			a = len(httpdata)

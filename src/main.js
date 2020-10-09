@@ -2,6 +2,7 @@
 import Vue from "vue";
 import App from "./App.vue";
 import {router} from "./router";
+import VueRouter from "vue-router";
 import { install } from './components';
 import {
   Button,
@@ -64,10 +65,11 @@ Vue.use(Cascader);
 Vue.use(Popconfirm);
 Vue.use(TreeSelect);
 Vue.use(Collapse);
+// Vue.use(router);
 console.log(Button.name, 'sadasd')
 install(Vue);
 Vue.config.productionTip = false;
-
+Vue.use(VueRouter);
 new Vue({
   router,
   render: h => h(App)

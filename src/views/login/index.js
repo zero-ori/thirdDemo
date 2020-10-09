@@ -1,8 +1,6 @@
 export const route = {
   path: '/login',
-  component: {
-    
-  },
+  component: () => import(/* webpackChunkName: "login" */ './List.vue'),
   children: [
     {
       path: 'list',

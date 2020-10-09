@@ -1,6 +1,7 @@
 <template>
   <div>
-    jkhakjsdhkjashdkjhajksdhasjkhd
+     <a-button>sss</a-button> jkhakjsdhkjashdkjhajksdhasjkhd
+  
   </div>
 </template>
 
@@ -16,10 +17,10 @@ export default {
 
   },
   methods: {
-    
+
   },
   mounted() {
-    
+
   },
 };
 </script>

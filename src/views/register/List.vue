@@ -4,7 +4,7 @@
 </template>
 
 <script>
-
+import {getAccess} from '../../services/register';
 export default {
   data() {
     return {
@@ -14,8 +14,17 @@ export default {
   computed: {
 
   },
+  created() {
+    this.getAccess()
+  },
   methods: {
-    
+    getAccess() {
+      getAccess().then( res => {
+        console.log(res,'res');
+      }).catch( err => {
+        console.log(err,'err');
+      })
+    }
   },
   mounted() {
     

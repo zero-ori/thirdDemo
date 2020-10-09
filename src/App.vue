@@ -1,9 +1,10 @@
 <template>
   <div id="app" class="main">
     <!-- <cp></cp> -->
-    <a-button type="primary"><router-link to="/login/list">login</router-link></a-button>
-    <a-button type="primary"><router-link to="/register/list">register</router-link></a-button>
-    <router-view></router-view>
+    <!-- <div v-if="routerClick">
+      <a-button type="primary" @click="changePage"><router-link to="/login/list">login</router-link></a-button>
+      <a-button type="primary" @click="changePage"><router-link to="/register/list">register</router-link></a-button>
+    </div> -->
     <!-- <div id="nav">
       <cp></cp>
       
@@ -28,8 +29,8 @@
     <!-- </div> -->
     <!-- <div id="" style="width: 600px;height:400px;"></div> -->
 
-    <!-- <p class="statement"><b>声明：</b>技术支持by-zero</p> -->
-    <!-- <router-view /> -->
+    <p class="statement"><b>声明：</b>技术支持by-zero</p>
+    <router-view />
   </div>
 </template>
 <script>

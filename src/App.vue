@@ -30,7 +30,10 @@
     <!-- <div id="" style="width: 600px;height:400px;"></div> -->
 
     <p class="statement"><b>声明：</b>技术支持by-zero</p>
-    <router-view />
+    <div v-if="Login">
+
+    </div>
+    <router-view v-else/>
   </div>
 </template>
 <script>
@@ -52,6 +55,7 @@ export default {
   },
   data() {
     return {
+      Login: false,
       option: {
         title: {
           text: "o-x-y-z-t---o"

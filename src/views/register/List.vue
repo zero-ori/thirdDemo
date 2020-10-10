@@ -56,8 +56,8 @@ import { getAccess, getRegisterForm } from "../../services/register";
 import svg from '../../assets/svg/close.svg'
 import _ from "lodash";
 const formItemLayout = {
-  labelCol: { span: 4 },
-  wrapperCol: { span: 8 }
+  labelCol: { span: 5 },
+  wrapperCol: { span: 15 }
 };
 const formTailLayout = {
   labelCol: { span: 4 },
@@ -208,6 +208,7 @@ export default {
   }
   .box-body {
     height: 100%;
+    margin-top: 10px;
     .box-bottom {
       width: 100%;
       text-align: right;

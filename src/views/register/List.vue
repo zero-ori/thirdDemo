@@ -3,8 +3,11 @@
     <div class="registerBox">
       <div class="box-head">
         注册账号
+        <svg-icon iconClass="close"></svg-icon>
+
+        <!-- <embed src="../../../assets/svg/colse.svg" type="image/svg+xml" /> -->
       </div>
-      <a-form :form="form">
+      <a-form class="box-body" :form="form">
         <a-form-item
           v-for="(item, idx) in fields"
           :key="idx"
@@ -15,8 +18,10 @@
           <a-input
             v-decorator="[
               item.label,
-              { rules: [{ required: true, message: 'Please input...', }],
-                trigger: 'blur'}
+              {
+                rules: [{ required: true, message: 'Please input...' }],
+                trigger: 'blur'
+              }
             ]"
             placeholder="请输入..."
           />
@@ -30,6 +35,7 @@
           </a-checkbox>
         </a-form-item>
         <a-form-item
+          class="box-bottom"
           :label-col="formTailLayout.labelCol"
           :wrapper-col="formTailLayout.wrapperCol"
         >
@@ -47,24 +53,25 @@
 
 <script>
 import { getAccess, getRegisterForm } from "../../services/register";
+import svg from '../../assets/svg/close.svg'
 import _ from "lodash";
 const formItemLayout = {
   labelCol: { span: 4 },
-  wrapperCol: { span: 8 },
+  wrapperCol: { span: 8 }
 };
 const formTailLayout = {
   labelCol: { span: 4 },
-  wrapperCol: { span: 8, offset: 4 },
+  wrapperCol: { span: 8, offset: 4 }
 };
 
 export default {
-
   data() {
     return {
+      svg,
       checkNick: false,
       formItemLayout,
       formTailLayout,
-      form: this.$form.createForm(this, { name: 'dynamic_rule' }),
+      form: this.$form.createForm(this, { name: "dynamic_rule" }),
       fields: [],
       showBtn: false,
       formValidate: {},
@@ -80,17 +87,17 @@ export default {
     check() {
       this.form.validateFields(err => {
         if (!err) {
-          console.info('success');
+          console.info("success");
         }
       });
     },
     handleChange(e) {
       this.checkNick = e.target.checked;
       this.$nextTick(() => {
-        this.form.validateFields(['nickname'], { force: true });
+        this.form.validateFields(["nickname"], { force: true });
       });
     },
-  
+
     closeChuangjianForm() {
       console.log("close...");
     },
@@ -175,7 +182,7 @@ export default {
   //height: 392px;
   z-index: 2;
 
-  background:rgb(53, 62, 192);
+  background: rgb(53, 62, 192);
   box-shadow: 0 6px 16px -8px rgba(0, 0, 0, 0.08),
     0 9px 28px 0 rgba(0, 0, 0, 0.05), 0 12px 48px 16px rgba(0, 0, 0, 0.03);
   border-radius: 4px;
@@ -201,35 +208,21 @@ export default {
   }
   .box-body {
     height: 100%;
-    padding: 24px 64px 8px 0;
-    .form-item {
-      margin-bottom: 16px;
-      height: 28px;
-      .ivu-form-item-content {
-        line-height: 28px;
-        .ivu-select-selection {
-          height: 28px;
-          width: 312px;
-        }
-        .ivu-input {
-          height: 28px;
-          width: 312px;
-        }
+    .box-bottom {
+      width: 100%;
+      text-align: right;
+      padding: 8px 16px 8px 0;
+      border-top-style: solid;
+      border-top-color: #e5e5e5;
+      border-top-width: 1px;
+      height: 30px;
+      margin-top: -10px;
+      .btn {
+        padding: 5px 16px;
+        width: 65px;
+        height: 32px;
+        margin-left: 8px;
       }
-    }
-  }
-  .box-bottom {
-    width: 100%;
-    text-align: right;
-    padding: 8px 16px 8px 0;
-    border-top-style: solid;
-    border-top-color: #e5e5e5;
-    border-top-width: 1px;
-    .btn {
-      padding: 5px 16px;
-      width: 65px;
-      height: 32px;
-      margin-left: 8px;
     }
   }
 }

@@ -35,6 +35,12 @@ import {
   TreeSelect,
   Collapse
 } from 'ant-design-vue';
+import SvgIcon from './components/svgIcon/svg'; // svg组件
+// 注册为全局组件
+Vue.component('svg-icon', SvgIcon)
+const req = require.context('./assets/svg', false, /\.svg$/)
+const requireAll = requireContext => requireContext.keys().map(requireContext)
+requireAll(req)
 //import 'ant-design-vue/dist/antd.css';
 Vue.component(Button.name, Button);
 Vue.use(Icon);
